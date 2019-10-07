@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:34:34 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 14:54:34 by alabreui         ###   ########.fr       */
+/*   Created: 2019/10/07 16:06:50 by alabreui          #+#    #+#             */
+/*   Updated: 2019/10/07 16:07:53 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int		isascii(int c)
 {
-	unsigned int	src_size;
-	unsigned int	i;
-
-	src_size = 0;
-	while (src[src_size])
-		src_size++;
-	if (size == 0)
-		return (src_size);
-	i = 0;
-	while (i < size - 1 && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (src_size);
+	return (c >= 0 && c < 128);
 }

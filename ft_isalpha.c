@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 13:34:34 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 14:54:34 by alabreui         ###   ########.fr       */
+/*   Created: 2019/10/07 15:48:56 by alabreui          #+#    #+#             */
+/*   Updated: 2019/10/07 15:52:36 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int		ft_isupper(int c)
 {
-	unsigned int	src_size;
-	unsigned int	i;
+	return (c >= 'A' && c <= 'Z');
+}
 
-	src_size = 0;
-	while (src[src_size])
-		src_size++;
-	if (size == 0)
-		return (src_size);
-	i = 0;
-	while (i < size - 1 && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (src_size);
+int		ft_islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
+}
+
+int		ft_isalpha(int c)
+{
+	return (ft_isupper(c) || ft_islower(c));
 }
