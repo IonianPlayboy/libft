@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:54:36 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/08 15:32:34 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:50:39 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,24 @@
 /*
 ** Part 1 : libc functions
 */
+void		*ft_memset(void *s, int c, unsigned int len);
+void		ft_bzero(void * s, unsigned int n);
 unsigned int	ft_strlen(char const *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
+int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
+char			*ft_strchr(char const *s, int c);
+char			*ft_strrchr(char const *s, int c);
+int				ft_strncmp(char *s1, char *s2, unsigned int n);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+char			*ft_strnstr(char const *s1, char const *s2, unsigned int len);
 int				ft_atoi(const char *str);
+void			*ft_calloc(unsigned int nb, unsigned int size);
 char			*ft_strdup(char *src);
 
 /*
