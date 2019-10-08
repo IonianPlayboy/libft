@@ -6,13 +6,13 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:34:37 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 12:33:53 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 13:22:59 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-unsigned int	ft_strlen(const char *str)
+unsigned int	ft_strlen(char const *str)
 {
 	int i;
 

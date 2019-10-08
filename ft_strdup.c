@@ -6,11 +6,11 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:50:42 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 16:50:57 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 13:17:09 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {

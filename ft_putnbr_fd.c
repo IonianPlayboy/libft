@@ -6,10 +6,11 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:11:10 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 17:13:13 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 13:20:10 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {
