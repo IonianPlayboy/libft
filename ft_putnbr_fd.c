@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:11:10 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/08 13:20:10 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 16:03:24 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		ft_putchar_fd('-', fd);
 		nb = nb * -1;
 	}
 	if (nb > 9)

@@ -6,81 +6,87 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:58:19 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/08 13:17:19 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:33:08 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_separator(char c)
+static int	is_separator(char c, char sep)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
+	if (c == sep)
 		return (1);
 	return (0);
 }
 
-int		get_nb_words(char *str)
+static int	get_nb_words(char const *str, char c)
 {
 	int		result;
 
 	result = 0;
 	while (*str)
 	{
-		if (!is_separator(*str))
+		if (!is_separator(*str, c))
 			result++;
-		while (*str && !is_separator(*str))
+		while (*str && !is_separator(*str, c))
 			str++;
-		while (*str && is_separator(*str))
+		while (*str && is_separator(*str, c))
 			str++;
 	}
 	return (result);
 }
 
-int		write_result(char **result, char *str)
+static void	write_str(char **result, char const *str, int nb_word, char c)
 {
 	int		i;
+
+	i = 0;
+	while (str[i] && !is_separator(str[i], c))
+	{
+		result[nb_word - 1][i] = str[i];
+		i++;
+	}
+}
+
+static int	write_result(char **result, char const *str, char c)
+{
 	int		nb_word;
 	int		length;
 
 	nb_word = 0;
 	while (*str)
 	{
-		while (is_separator(*str))
+		while (is_separator(*str, c))
 			str++;
 		length = 0;
-		while (str[length] && !is_separator(str[length]))
+		while (str[length] && !is_separator(str[length], c))
 			length++;
 		if (length != 0)
 		{
 			nb_word++;
 			if (!(result[nb_word - 1] =
-						(char *)malloc(sizeof(char) * (length + 1))))
+					(char *)malloc(sizeof(char) * (length + 1))))
 				return (0);
-			i = 0;
 			result[nb_word - 1][length] = '\0';
-			while (str[i] && !is_separator(str[i]))
-			{
-				result[nb_word - 1][i] = str[i];
-				i++;
-			}
-			str = str + i;
+			write_str(result, str, nb_word, c);
+			str = str + length;
 		}
-		while (*str && is_separator(*str))
+		while (*str && is_separator(*str, c))
 			str++;
 	}
 	return (1);
 }
 
-char	**ft_split(char *str)
+char		**ft_split(char const *s, char c)
 {
 	int		nb_words;
 	char	**result;
 
-	nb_words = get_nb_words(str);
+	nb_words = get_nb_words(s, c);
 	if (!(result = (char **)malloc(sizeof(char *) * (nb_words + 1))))
 		return (NULL);
 	result[nb_words] = NULL;
-	if (!write_result(result, str))
+	if (!write_result(result, s, c))
 		return (NULL);
 	return (result);
 }

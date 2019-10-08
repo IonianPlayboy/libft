@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:54:36 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/08 13:26:31 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:32:34 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char			*ft_strdup(char *src);
 ** Part 2 : additional functions
 */
 char			*ft_strjoin(char const *s1, char const *s2);
-char			**ft_split(char *str);
+char			**ft_split(char const *s, char c);
 char			*ft_itoa(int nbr);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
