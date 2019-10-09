@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:54:36 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/08 18:50:39 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/09 15:26:06 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@
 /*
 ** Part 1 : libc functions
 */
-void		*ft_memset(void *s, int c, unsigned int len);
-void		ft_bzero(void * s, unsigned int n);
+void			*ft_memset(void *s, int c, unsigned int len);
+void			ft_bzero(void *s, unsigned int n);
+void			*ft_memcpy(void *dest, void const *src, unsigned int n);
+void			*ft_memccpy(void *dest, void const *src, int c, unsigned int n);
+void			*ft_memmove(void *dest, void const *src, unsigned int n);
+void			*ft_memchr(void const *s, int c, unsigned int n);
+int				ft_memcmp(void const *s1, void const *s2, unsigned int n);
 unsigned int	ft_strlen(char const *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
