@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(char const *big, char const *little, unsigned int len)
+char	*ft_strnstr(char const *big, char const *little, size_t len)
 {
 	char			*result;
 	unsigned int	nb_searched;

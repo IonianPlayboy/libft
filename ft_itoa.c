@@ -23,7 +23,7 @@ static char	*zero_toa(void)
 	return (result);
 }
 
-static void	write_result(char *result, long int nb, int length, int is_neg)
+static void	write_result(char *result, long int n, int length, int is_neg)
 {
 	long int	curr_nbr;
 	int			i;
@@ -31,7 +31,7 @@ static void	write_result(char *result, long int nb, int length, int is_neg)
 	if (is_neg)
 		result[0] = '-';
 	i = 0;
-	curr_nbr = nb;
+	curr_nbr = n;
 	while (curr_nbr != 0)
 	{
 		result[length - 1 + is_neg - i] = (curr_nbr % 10) + '0';
@@ -45,16 +45,16 @@ char		*ft_itoa(int nbr)
 {
 	int			is_neg;
 	int			length;
-	long int	nb;
+	long int	n;
 	long int	curr_nbr;
 	char		*result;
 
 	if (nbr == 0)
 		return (zero_toa());
 	is_neg = nbr < 0 ? 1 : 0;
-	nb = nbr;
-	nb = is_neg ? nb * -1 : nb;
-	curr_nbr = nb;
+	n = nbr;
+	n = is_neg ? n * -1 : n;
+	curr_nbr = n;
 	length = 0;
 	while (curr_nbr != 0)
 	{
@@ -64,6 +64,6 @@ char		*ft_itoa(int nbr)
 	result = 0;
 	if (!(result = (char *)malloc(sizeof(char) * (length + is_neg) + 1)))
 		return (NULL);
-	write_result(result, nb, length, is_neg);
+	write_result(result, n, length, is_neg);
 	return (result);
 }
