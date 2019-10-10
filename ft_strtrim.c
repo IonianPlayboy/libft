@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:17:09 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/09 17:26:19 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/10 18:40:51 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static int	is_in_set(char c, char const *set)
 	return (set[i] == c ? 1 : 0);
 }
 
+char		*create_empty_string(void)
+{
+	char	*result;
+
+	if (!(result = malloc(sizeof(char) * 1)))
+		return (NULL);
+	result[0] = '\0';
+	return (result);
+}
+
 char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
@@ -35,7 +45,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
 	if (start == len)
-		start = 0;
+	{
+		return (create_empty_string());
+	}
 	else
 	{
 		while (max > start && is_in_set(s1[max], set))

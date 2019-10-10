@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:28:32 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/10 14:48:36 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/10 18:49:31 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 	t_list	*prev_el;
 	t_list	*curr_el;
 
-	result = ft_lstnew((*f)(lst->content));
+	result = (*f)(lst->content);
 	prev_el = result;
 	lst = lst->next;
 	while (lst)
