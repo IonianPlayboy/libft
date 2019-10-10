@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 12:00:19 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 12:31:22 by alabreui         ###   ########.fr       */
+/*   Created: 2019/10/10 14:28:32 by alabreui          #+#    #+#             */
+/*   Updated: 2019/10/10 14:48:36 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char const *s1, char const *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
-	unsigned int	i;
+	t_list	*result;
+	t_list	*prev_el;
+	t_list	*curr_el;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	result = ft_lstnew((*f)(lst->content));
+	prev_el = result;
+	lst = lst->next;
+	while (lst)
+	{
+		curr_el = (*f)(lst->content);
+		prev_el->next = curr_el;
+		prev_el = prev_el->next;
+		lst = lst->next;
+	}
+	return (result);
 }
