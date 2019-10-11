@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:11:49 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/07 15:45:36 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/11 11:41:40 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ size_t	ft_strlcat(char *dst, char const *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
-	if (size + i < size)
-		dst[i] = '\0';
+	dst[i] = '\0';
 	return (size + src_size);
 }

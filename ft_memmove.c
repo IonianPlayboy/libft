@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:12:33 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/09 14:49:29 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/11 12:05:01 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, void const *src, size_t n)
 {
 	unsigned int	i;
 
+	if (dst == (void *)src)
+		return (dst);
 	if (dst > src)
 	{
 		i = 1;
