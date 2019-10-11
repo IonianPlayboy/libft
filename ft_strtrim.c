@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:17:09 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/11 15:07:49 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/11 15:57:06 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 		if (max == start)
 			max = len;
 	}
-	if(!(result = ft_substr(s1, start, max - start + 1)))
+	if (!(result = ft_substr(s1, start, max - start + 1)))
 		return (NULL);
 	return (result);
 }
