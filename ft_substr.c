@@ -6,13 +6,23 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:55:51 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/10 18:30:29 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/14 15:04:53 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*create_empty_string(void)
+{
+	char	*result;
+
+	if (!(result = malloc(sizeof(char) * 1)))
+		return (NULL);
+	result[0] = '\0';
+	return (result);
+}
+
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char const		*temp;
 	char			*result;
@@ -20,14 +30,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int				i;
 
 	temp = (s + start);
-	if (len <= 0)
+	if (len < 0)
 		return (NULL);
+	else if (len == 0)
+		return (create_empty_string());
 	if (start > ft_strlen(s))
-	{
-		if (!(result = malloc(sizeof(char) * 1)))
-			return (NULL);
-		result[0] = '\0';
-	}
+		return (create_empty_string());
 	curr_len = ft_strlen(temp) < len ? ft_strlen(temp) : len;
 	if (!(result = malloc(sizeof(char) * (curr_len + 1))))
 		return (NULL);
