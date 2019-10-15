@@ -6,15 +6,15 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:17:09 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/14 17:01:04 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/15 11:55:08 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, char const *set)
+static int		is_in_set(char c, char const *set)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (set[i] && set[i] != c)
@@ -22,7 +22,7 @@ static int	is_in_set(char c, char const *set)
 	return (set[i] == c ? 1 : 0);
 }
 
-char		*create_empty_string(void)
+static char		*create_empty_string(void)
 {
 	char	*result;
 
@@ -32,7 +32,7 @@ char		*create_empty_string(void)
 	return (result);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
 	int		max;
