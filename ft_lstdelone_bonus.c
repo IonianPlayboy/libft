@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:39:47 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/14 16:08:18 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/17 13:28:07 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void		ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	(*del)(lst->content);
+	if (del)
+		(*del)(lst->content);
 	free(lst);
+	lst = NULL;
 }

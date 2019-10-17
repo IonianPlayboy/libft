@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:49:16 by alabreui          #+#    #+#             */
-/*   Updated: 2019/10/11 15:26:48 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/10/17 14:50:58 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(char const *big, char const *little, size_t len)
 	{
 		nb_searched++;
 		i = 0;
-		while (result[i] == little[i] && nb_searched + i <= len)
+		while (little[i] && result[i] == little[i] && nb_searched + i <= len)
 			i++;
 		if (!little[i])
 			is_found = 1;
